@@ -19,7 +19,7 @@ app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/tickets', require('./routes/ticketRoutes'))
 
 // Serve Frontend
-if (process.env.NODE_ENV === 'production') {
+/*if (process.env.NODE_ENV === 'production') {
   // Set build folder as static
   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
     res.status(400).json({ message: 'Welcome to the Support Desk API' })
   })
 }
-
+*/
 app.use(errorHandler)
 /////bulild /////
 
