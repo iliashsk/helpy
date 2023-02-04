@@ -21,7 +21,7 @@ app.use('/api/tickets', require('./routes/ticketRoutes'))
 // Serve Frontend
 if ( process.env.NODE_ENV ==="production"){
 
-    app.use(express.static(path.resolve(__dirname, 'frontend', 'build'));
+    //app.use(express.static(path.resolve(__dirname, 'frontend', 'build'));
 
   
 
