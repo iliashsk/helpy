@@ -14,12 +14,10 @@ const handleClick=()=>{
 
 	return(<>
 		<br/><br/>
-		<div  style={{float:"right"}}>
-          <img src="photo/girl.jpg" width="50px" height="60px" style={{borderRadius:'50%'}} onClick={handleClick}></img>
-          </div>
+		
          
-	<h1 align='center' style={{color:'green'}}> Profile</h1>
-	<div align='center'>
+	
+	<div align='center' >
 	<Card reverse={true}>
 	<h1>Welcome</h1>
 	<h2>Name:{user.name}</h2>
