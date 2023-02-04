@@ -97,6 +97,10 @@ const Headerbar=()=>{
     Videos
       <Link to='/video' ></Link>
     </Item>
+    <Item key="profile">
+    Profile
+      <Link to='/profile' ></Link>
+    </Item>
 
             {user ? (
             <Item key="logout" onClick={onLogout} className='logout'>
