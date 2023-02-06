@@ -2,6 +2,7 @@ import React from "react";
 import GoogleMapReact from 'google-map-react';
 import { EnvironmentOutlined,CarOutlined}
  from '@ant-design/icons';
+ import { MapContainer, TileLayer, useMap,Marker,Popup } from 'react-leaflet'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -14,7 +15,7 @@ export default function Map({lat,long}){
     zoom: 13
   };
 
-  return (
+  return (<>
     // Important! Always set the container height explicitly
     <div style={{ height: '100vh', width: '100%' }}>
       <GoogleMapReact
@@ -52,5 +53,7 @@ export default function Map({lat,long}){
         />
       </GoogleMapReact>
     </div>
-  );
+
+
+  </>);
 }

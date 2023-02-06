@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Headerbar from './components/nav/Headerbar'
 import Location from './components/Location'
 import Map from './map/Map'
+import LeafMap from './map/LeafMap'
 import Video from './video/Video'
 import TravelCard from './components/TravelCard'
 import FrontImg from './components/FrontImg'
@@ -38,7 +39,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<><ProImg/><Profile /></>} />
-           
+           <Route path='/map' element={<><Map /><LeafMap/></>} />
             <Route path='/video' element={<><PrivateRoute><Video/></PrivateRoute></>}/>
             <Route
               path='/new-ticket'
