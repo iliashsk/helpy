@@ -97,6 +97,14 @@ const Headerbar=()=>{
     Videos
       <Link to='/video' ></Link>
     </Item>
+    <Item key="email">
+    Send Email
+      <Link to='/email' ></Link>
+    </Item>
+    <Item key="calulator">
+    Calculator
+      <Link to='/calc' ></Link>
+    </Item>
     <Item key="profile">
     Profile
       <Link to='/profile' ></Link>

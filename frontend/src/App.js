@@ -16,12 +16,14 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import Headerbar from './components/nav/Headerbar'
 import Location from './components/Location'
-import Map from './map/Map'
-import LeafMap from './map/LeafMap'
+//import Map from './map/Map'
+//import LeafMap from './map/LeafMap'
 import Video from './video/Video'
 import TravelCard from './components/TravelCard'
 import FrontImg from './components/FrontImg'
 import Footer from './components/nav/Footer'
+import Calculator from './calculator/Calculator'
+import SendMail from './components/SendMail'
 // NOTE: Here we have removed the nested routing as the path is the same
 
 function App() {
@@ -39,7 +41,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<><ProImg/><Profile /></>} />
-           <Route path='/map' element={<><Map /><LeafMap/></>} />
+          {/*} <Route path='/map' element={<><Map /><LeafMap/></>} /> */}
             <Route path='/video' element={<><PrivateRoute><Video/></PrivateRoute></>}/>
             <Route
               path='/new-ticket'
@@ -65,6 +67,8 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path='/calc' element={<Calculator/>} />
+            <Route path='/email' element={<SendMail/>} />
           </Routes>
         
       </Router>

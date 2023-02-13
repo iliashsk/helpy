@@ -35,4 +35,53 @@ else{
   res.send({"iliash":"how are you"})
 }
 
+/////Email sending//////
+const nodemailer = require('nodemailer');
+
+app.post('/mail',(req,res)=>{
+
+    let sendmail=req.body.sendmail;
+    let subject=req.body.subject;
+    let text=req.body.text;
+    console.log(sendmail);
+let mailTransporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'softechvideo@gmail.com',
+        pass: 'wnspvuzjgndzykjd'
+    }
+});
+
+let mailDetails = {
+    from: 'softechvideo@gmail.com',
+    to: sendmail,
+    subject: subject,
+    text: text,
+   /* attachments: [
+            {
+                filename: 'photo/iliash.jpg',
+                path: 'photo/iliash.jpg'
+            },
+         ]
+         */
+
+};
+
+mailTransporter.sendMail(mailDetails, function(err, data) {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log('Email sent successfully');
+        res.send(data)
+    }
+});
+})
+
+
+
+
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+
+
+

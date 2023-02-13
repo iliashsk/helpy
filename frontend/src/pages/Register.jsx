@@ -53,11 +53,12 @@ function Register() {
           // NOTE: by unwrapping the AsyncThunkAction we can navigate the user after
           // getting a good response from our API or catch the AsyncThunkAction
           // rejection to show an error message
+          console.log(user)
          
           navigate('/');
 
         })
-        .catch(toast.error)
+        .catch(alert(toast.error))
     }
   }
 
