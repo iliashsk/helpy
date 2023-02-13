@@ -28,17 +28,17 @@ const [text,setText]=useState('')
 		<form onSubmit={onSubmit}>
   <div>
     <label>Email address</label>
-    <input type="text" className="form-control" name="sendmail" onChange={(e)=>{setSendmail(e.target.value)}} placeholder="Enter email"></input>
+    <input type="email" className="form-control" name="sendmail" onChange={(e)=>{setSendmail(e.target.value)}} placeholder="Enter email"></input>
     
   </div>
   <div >
-    <label >Email address</label>
-    <input type="text" className="form-control" name="subject" onChange={(e)=>{setSubject(e.target.value)}} placeholder="Enter email"></input>
+    <label >Subject</label>
+    <input type="text" className="form-control" name="subject" onChange={(e)=>{setSubject(e.target.value)}} placeholder="Enter subjects"></input>
     
   </div>
   <div>
-    <label >Email address</label>
-    <input type="text" className="form-control" name="text" onChange={(e)=>{setText(e.target.value)}} placeholder="Enter email"></input>
+    <label >Body contents</label>
+    <input type="text" className="form-control" name="text" onChange={(e)=>{setText(e.target.value)}} placeholder="Enter Texts"></input>
     
   </div>
   

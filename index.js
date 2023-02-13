@@ -48,7 +48,7 @@ let mailTransporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'softechvideo@gmail.com',
-        pass: 'wnspvuzjgndzykjd'
+        pass: '**************'
     }
 });
 
