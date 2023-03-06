@@ -5,12 +5,7 @@ import Card from '../components/Card'
 
 const Profile=()=>{
 	const { user } = useSelector((state) => state.auth)
-const handleClick=()=>{
-	console.log("upload profile");
-	return(
-		<input type='file' ></input>
-			)
-}
+
 
 	return(<>
 		<br/><br/>

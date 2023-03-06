@@ -3,6 +3,7 @@ import Display from "./Display";
 import Buttons from "./Buttons";
 //import "./styles/Calculator.css";
 import { evaluate, round } from "mathjs";
+//import './Styles.css'
 
 function Calculator() {
   const [input, setInput] = useState("");

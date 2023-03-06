@@ -31,9 +31,6 @@ if (process.env.NODE_ENV ==="production"){
 
     })
 }
-else{
-  res.send({"iliash":"how are you"})
-}
 
 /////Email sending//////
 const nodemailer = require('nodemailer');
@@ -48,7 +45,7 @@ let mailTransporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'softechvideo@gmail.com',
-        pass: '**************'
+        pass: process.env.PASS
     }
 });
 
@@ -76,6 +73,139 @@ mailTransporter.sendMail(mailDetails, function(err, data) {
     }
 });
 })
+
+
+
+
+///////////////////////////////helpy moto dashboard//////////////////////
+const mongoose = require('mongoose');
+const Vehicle = require('./models/Vehicle');
+
+const mechanicSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  phone: {
+    type: Number,
+    required: true
+  }
+});
+const Mechanic=mongoose.model('Mechanic',mechanicSchema);
+
+app.post('/api/mechanics',(req,res,error)=>{
+
+const {name,email,phone}=req.body;
+const mechanic=new Mechanic({
+  name,
+  email, 
+  phone
+})
+
+mechanic.save();
+console.log("mechanics added")
+});
+app.get('/hello',(req,res)=>{
+  console.log("this is iliash")
+  res.send("how are you");
+})
+
+app.get('/api/mechanics',(req,res)=>{
+  Mechanic.find({},(err,mechanics)=>{
+   //console.log(mechanics);
+    res.send(mechanics);
+
+}).sort({'_id':-1});
+});
+
+app.delete('/api/mechanics/:id', (req, res) => {
+  Mechanic.findByIdAndDelete(req.params.id).then(() => {
+    res.send('Mechanic  deleted');
+    //console.log('mechanic deleted')
+  }).catch(error => {
+    console.log('Error deleting vehicle:', error);
+    res.status(500).send('Error deleting vehicle');
+  });
+});
+
+
+
+
+app.get('/api/vehicles', (req, res) => {
+  Vehicle.find().then(vehicles => {
+    res.json(vehicles);
+  }).catch(error => {
+    console.log('Error retrieving vehicles:', error);
+    res.status(500).send('Error retrieving vehicles');
+  });
+});
+
+
+
+// Retrieve a specific vehicle
+app.get('/api/vehicles/:id', (req, res) => {
+  Vehicle.findById(req.params.id).then(vehicle => {
+    if (vehicle) {
+      res.json(vehicle);
+    } else {
+      res.status(404).send('Vehicle not found');
+    }
+  }).catch(error => {
+    console.log('Error retrieving vehicle:', error);
+    res.status(500).send('Error retrieving vehicle');
+  });
+});
+
+// Add a new vehicle
+app.post('/api/vehicles', (req, res) => {
+  const { make, model, year } = req.body;
+
+  const vehicle = new Vehicle({
+    make,
+    model,
+    year
+  });
+
+  vehicle.save().then(() => {
+    res.send('Vehicle added');
+  }).catch(error => {
+    console.log('Error adding vehicle:', error);
+    res.status(500).send('Error adding vehicle');
+  });
+});
+
+// Update an existing vehicle
+app.put('/api/vehicles/:id', (req, res) => {
+  const { make, model, year } = req.body;
+
+  Vehicle.findByIdAndUpdate(req.params.id, {
+    make,
+    model,
+    year
+  }).then(() => {
+    res.send('Vehicle updated');
+  }).catch(error => {
+    console.log('Error updating vehicle:', error);
+    res.status(500).send('Error updating vehicle');
+  });
+});
+
+// Delete a specific vehicle
+app.delete('/api/vehicles/:id', (req, res) => {
+  Vehicle.findByIdAndDelete(req.params.id).then(() => {
+    res.send('Vehicle deleted');
+  }).catch(error => {
+    console.log('Error deleting vehicle:', error);
+    res.status(500).send('Error deleting vehicle');
+  });
+});
+
+
+
 
 
 

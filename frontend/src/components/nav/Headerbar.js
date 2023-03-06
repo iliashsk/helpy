@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {Menu} from 'antd'
 import { HomeOutlined, AppstoreOutlined, SettingOutlined,UserOutlined,UserAddOutlined,DropboxOutlined,
-ShoppingOutlined,DownOutlined }
+ShoppingOutlined,DownOutlined,MailOutlined }
  from '@ant-design/icons';
 import {Link,useNavigate} from 'react-router-dom'
 //import { getAuth, updateProfile } from 'firebase/auth'
@@ -97,26 +97,27 @@ const Headerbar=()=>{
     Videos
       <Link to='/video' ></Link>
     </Item>
-    <Item key="email">
+    <Item key="email" icon={<MailOutlined/>}>
     Send Email
       <Link to='/email' ></Link>
     </Item>
-    <Item key="calulator">
-    Calculator
-      <Link to='/calc' ></Link>
+    <Item key="dashboard">
+    Dashboard
+      <Link to='/dash' ></Link>
     </Item>
-    <Item key="profile">
+    
+
+            {user ? (<>
+            <Item key="profile">
     Profile
       <Link to='/profile' ></Link>
     </Item>
-
-            {user ? (
             <Item key="logout" onClick={onLogout} className='logout'>
             
              logout
             </Item>
         
-        ) : (
+        </>) : (
           <>
            <Item key="login">
            Login

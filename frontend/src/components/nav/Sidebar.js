@@ -1,6 +1,7 @@
 import React from 'react';
 //import Appli from '../../ratingcomponent/Appli'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
+import { getAuth} from 'firebase/auth'
 import {
   AppstoreOutlined,
   BarChartOutlined,
@@ -11,6 +12,10 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   HomeOutlined,
+  MailOutlined,
+  DeleteOutlined,
+  CarOutlined,
+  PoweroffOutlined
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
 const {SubMenu,Item}=Menu;
@@ -25,6 +30,7 @@ const items = [
   TeamOutlined,
   ShopOutlined,
   HomeOutlined,
+  
 ].map((icon, index) => ({
   key: String(index + 1),
   icon: React.createElement(icon),
@@ -33,11 +39,22 @@ const items = [
 
 
 
-
 const Sidebar = ({content}) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+
+const navigate=useNavigate()
+const auth=getAuth();
+ const onLogout = () => {
+    auth.signOut()
+    navigate('/');
+    navigate(0);
+  }
+
+
+
   return (
     <Layout hasSider>
       <Sider
@@ -48,8 +65,10 @@ const Sidebar = ({content}) => {
           left: 0,
           top: 0,
           bottom: 0,
-          marginTop:"30px",
-          background:"lightgreen"
+         
+          background:"grey",
+         
+          
         }}
       >
         <div
@@ -59,53 +78,51 @@ const Sidebar = ({content}) => {
             background: 'rgba(255, 255, 255, 0.2)',
           }}
         />
+
+
+
         <Menu theme="blue" mode="inline" key="Home" >
-       <Item key="home" icon={<HomeOutlined />}>
+       <Item key="home" color="red" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
     </Item>
-    <SubMenu title="Rate It">
-      <Item key="home" icon={<HomeOutlined />}>
-    rating
-      <Link to='/rating' ></Link>
+    
+    <Item key="mechanic" icon={<HomeOutlined />}>
+    Managemechanics
+      <Link to='/mechanic' ></Link>
     </Item>
-    </SubMenu >
+
+        <Item key="vdetails" icon={<CarOutlined/>}>
+    VehicleDetails
+      <Link to='/vdetails' ></Link>
+    </Item>
+
+    <Item key="vdelete" icon={<DeleteOutlined />}>
+    DeleteVehicle
+      <Link to='/vdelete' ></Link>
+    </Item>
+
+    
     <Item key="home" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
     </Item>
-        <Item key="home" icon={<HomeOutlined />}>
-    Videos
-      <Link to='/video' ></Link>
-    </Item>
+
     <Item key="home" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
     </Item>
+
     <Item key="home" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
     </Item>
+
     <Item key="home" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
     </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
+
     <Item key="home" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
@@ -146,6 +163,14 @@ const Sidebar = ({content}) => {
     home
       <Link to='/' ></Link>
     </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="logout" icon={<PoweroffOutlined /> }>
+      <button style={{color:"red"}} onClick={onLogout} >Logout</button>
+    </Item>
+
    </Menu>
       </Sider>
       <Layout
@@ -157,7 +182,7 @@ const Sidebar = ({content}) => {
        
         <Content
           style={{
-            margin: '46px 16px 0',
+            backgroundColor:"grey",
             overflow: 'initial',
 
           }}
@@ -166,7 +191,7 @@ const Sidebar = ({content}) => {
             style={{
               padding: 24,
               textAlign: 'center',
-              background: "#8908",
+              color:"black",
               marginTop:"20px",
             }}
           >
@@ -176,7 +201,7 @@ const Sidebar = ({content}) => {
         <Footer
           style={{
             textAlign: 'center',
-            background:"lightgreen",
+            background:"#623",
             
           }}
         >

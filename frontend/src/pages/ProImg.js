@@ -5,8 +5,10 @@ import React, { useState } from "react";
 function ProImg() {
     const [file, setFile] = useState('photo/girl.jpg');
     function handleChange(e) {
+        window.localStorage.removeItem('image');
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
+        window.localStorage.setItem('image',e.target.files[0]);
     }
   
     return (<>
