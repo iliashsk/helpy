@@ -19,7 +19,7 @@ navigate('/regist:name="Iliash"')
           <div  style={{float:"right"}}>
           <img src="photo/girl.jpg" width="500px" height="600px" style={{borderRadius:'50%'}}></img>
           </div>
-        {/*  <div className="card-body">
+          <div className="card-body">
             <button type='button'>visit</button>
             <ul className="list-unstyled mt-3 mb-4">
               <li><h1>The Exotic</h1></li>
@@ -28,7 +28,7 @@ navigate('/regist:name="Iliash"')
               <li><button>Discover Now</button></li>
             </ul>
             
-          </div> */}
+          </div> 
            </form>
         </div>
        

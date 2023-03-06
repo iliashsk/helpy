@@ -12,7 +12,7 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "build":"npm i"
   },
   "name": "backend",
