@@ -2,7 +2,7 @@
 	"builds":[
 	{
 	"src":"index.html",
-	//"use":"@vercel/node"
+	"use":"@vercel/html"
 	}],
 	"routes":[
 	{
