@@ -22,9 +22,9 @@ navigate('/regist:name="Iliash"')
           <div className="card-body">
             <button type='button'>visit</button>
             <ul className="list-unstyled mt-3 mb-4">
-              <li><h1>The Exotic</h1></li>
-              <li><h1 color="green">Lakshadeep</h1></li>
-              <li><h1>Island</h1></li>
+              <li><h1>A Well defined company</h1></li>
+              <li><h1 color="green">Kepp in touch with us</h1></li>
+              <li><h1>A great company</h1></li>
               <li><button>Discover Now</button></li>
             </ul>
             

@@ -25,6 +25,8 @@ const [text,setText]=useState('')
 	return(<>
 
 		<br/><br/>
+		<div align='center'>
+		<div className='mail'>
 		<form onSubmit={onSubmit}>
   <div>
     <label>Email address</label>
@@ -43,7 +45,11 @@ const [text,setText]=useState('')
   </div>
   
   <button type="submit" className="btn btn-primary">Submit</button>
-</form>
+</form></div>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
 		</>)
 }
 export default SendMail

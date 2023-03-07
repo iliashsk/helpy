@@ -44,7 +44,7 @@ const Headerbar=()=>{
    style={{position:"fixed",background:"lightcyan",width:"100%",zIndex:'10'}} >
     
     <Item key="home" icon={<HomeOutlined />}>
-    Gol
+    Home
       <Link to='/' ></Link>
     </Item>
      <SubMenu key="RegistDetails" title="Packages" icon={<DownOutlined />}>
