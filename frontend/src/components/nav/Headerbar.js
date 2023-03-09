@@ -47,48 +47,8 @@ const Headerbar=()=>{
     Home
       <Link to='/' ></Link>
     </Item>
-     <SubMenu key="RegistDetails" title="Packages" icon={<DownOutlined />}>
-     <Item key="register" icon={<UserAddOutlined />} className="float-right">
-     Registration
-     <Link to='/regist' ></Link>
-    </Item>
-    <Item key="registdetails" icon={<UserAddOutlined />} className="float-right">
-     Registered users
-     <Link to='/registdetails' ></Link>
-    </Item>
-    </SubMenu>
-   {/* <Item key="login" icon={<UserOutlined />} className="float-right"	>
-      <Link to='/login' >Login</Link>
-    </Item>
-  */ }
-
-    <SubMenu key="Shopping" title="about lakshadeep" icon={<DownOutlined />}>
-      <Item key="Electronics" >
-        Electronics
-        <Link to='/electronics' ></Link>
-      </Item>
-      <Item key="three">
-        Add Items
-         <Link to='/additems' ></Link>
-      </Item>
-      
-    </SubMenu>
-  
    
-        <Item key="two">
-        about us
-        <Link to='/about' />
-        </Item>
-    <Item key="gol" >
-    Gol
-      <Link to='/gol' ></Link>
-    </Item>
 
- 
-  <Item key="support">
-    Support
-      <Link to='/support' ></Link>
-    </Item>
     <Item key="booking">
     My booking
       <Link to='/tickets' ></Link>
