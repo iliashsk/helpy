@@ -102,6 +102,11 @@ const auth=getAuth();
       <Link to='/vdelete' ></Link>
     </Item>
 
+    <Item key="email" icon={<MailOutlined/>}>
+    Send Email
+      <Link to='/email' ></Link>
+    </Item>
+
     
     <Item key="home" icon={<HomeOutlined />}>
     home

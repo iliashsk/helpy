@@ -97,10 +97,12 @@ const Headerbar=()=>{
     Videos
       <Link to='/video' ></Link>
     </Item>
-    <Item key="email" icon={<MailOutlined/>}>
-    Send Email
-      <Link to='/email' ></Link>
+
+    <Item key="contact">
+  Contact Us
+      <Link to='/contact' ></Link>
     </Item>
+    
     <Item key="dashboard">
     Dashboard
       <Link to='/dash' ></Link>

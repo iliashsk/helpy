@@ -11,7 +11,9 @@ navigate('/regist:name="Iliash"')
   }
 	
 	return(<>
-  <h1 align='center' style={{color:"red",fontSize:'50px'}}><marquee>WELCOME TO HELPY MOTO PTV LTD</marquee></h1>
+  <h1 align='center' style={{color:"red",fontSize:'50px'}}>
+  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()">WELCOME TO SOFTECH TECHNOLOGY PTV LTD</marquee>
+  </h1>
 	<div className="container" style={{backgroundColor:"lightCyan"}}>
              <div className="card mb-12 box-shadow" style={{backgroundColor:"lightCyan"}}>
         <form onSubmit={onSubmit} >

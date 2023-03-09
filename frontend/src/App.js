@@ -35,6 +35,7 @@ import ManageMechanics from './helpy/ManageMechanics'
 import VehicleDetails from './helpy/VehicleDetails'
 import DeleteVehicle from './helpy/DeleteVehicle'
 import Spinner from './components/Spinner'
+import Contact from './components/Contact'
 // NOTE: Here we have removed the nested routing as the path is the same
 
 function App() {
@@ -51,6 +52,7 @@ if(isLoading){return(<Spinner/>)}
      <Route path='/mechanic' element={<><Sidebar content={<><ManageMechanics/></>} /></>}/>
      <Route path='/vdetails' element={<><Sidebar content={<><VehicleDetails/></>} /></>}/>
      <Route path='/vdelete' element={<><Sidebar content={<><DeleteVehicle/></>} /></>}/>
+    <Route path='/email' element={<><Sidebar content={<><SendMail/></>} /></>} />
 
   </Routes>
   </Router>
@@ -75,7 +77,8 @@ if(isLoading){return(<Spinner/>)}
             <Route path='/' element={<><br/><br/><br/><br/><FrontImg/><TravelCard/></>} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/profile' element={<><ProImg/><Profile /></>} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/contact' element={<><Contact/></>} />
           {/*} <Route path='/map' element={<><Map /><LeafMap/></>} /> */}
             <Route path='/video' element={<><PrivateRoute><Video/></PrivateRoute></>}/>
             <Route
@@ -103,7 +106,6 @@ if(isLoading){return(<Spinner/>)}
               }
             />
             <Route path='/dash' element={<Signin/>} />
-            <Route path='/email' element={<SendMail/>} />
           </Routes>
         
       </Router>
