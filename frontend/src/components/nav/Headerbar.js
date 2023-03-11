@@ -59,7 +59,7 @@ const Headerbar=()=>{
     </Item>
 
     <Item key="contact">
-  Contact Us
+  Contact
       <Link to='/contact' ></Link>
     </Item>
     
@@ -67,6 +67,21 @@ const Headerbar=()=>{
     Dashboard
       <Link to='/dash' ></Link>
     </Item>
+
+    <SubMenu key="utility" title="Utility" icon={<DropboxOutlined />}>
+      <Item key="temp" icon={<HomeOutlined />}>
+       Weather
+      <Link to='/weather' ></Link>
+       </Item>
+       <Item key="voice" icon={<HomeOutlined />}>
+       Voice Recorder
+      <Link to='/voice' ></Link>
+       </Item>
+     <Item key="calculator"  icon={<HomeOutlined />}>
+      F<sup>o</sup> to C<sup>o</sup> 
+      <Link to='/calculator' ></Link>
+      </Item>
+    </SubMenu>
     
 
             {user ? (<>

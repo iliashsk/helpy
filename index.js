@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 require('colors')
 require('dotenv').config()
+const https=require('https')
 const uuid = require('uuid')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
@@ -199,6 +200,37 @@ console.log(result);
 const shortid = require('shortid');
  
 console.log(shortid.generate());
+
+////////////////////////weather//////////////////////
+app.post('/weath',(req,res)=>{
+  
+  let town=req.body.text;
+const apikey="50a789f1ecfef4993d6f7ad02535a06e";
+  var url="https://api.openweathermap.org/data/2.5/weather?q="+town+"&appid="+apikey+"";
+
+  https.get(url,(response)=>{   
+  
+    response.on("data",(dat)=>{
+      const weather=JSON.parse(dat);
+      if(weather.cod===200){
+        var temperature=weather.main.temp;
+      
+      var temperature=Math.trunc(temperature-273);
+
+  
+      res.json({town:town,temp:temperature});
+      }
+      else{
+        res.json({town:town,temp:"not found"});
+      }
+      
+    });
+
+
+
+    })
+
+});
 
 
 

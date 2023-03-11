@@ -20,6 +20,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import PrivateRoute from './components/PrivateRoute'
 import Headerbar from './components/nav/Headerbar'
 import Location from './components/Location'
+import Calculator from './components/Calculator'
+import Weather from './components/Weather'
 //import Map from './map/Map'
 //import LeafMap from './map/LeafMap'
 import Video from './video/Video'
@@ -36,6 +38,7 @@ import VehicleDetails from './helpy/VehicleDetails'
 import DeleteVehicle from './helpy/DeleteVehicle'
 import Spinner from './components/Spinner'
 import Contact from './components/Contact'
+import Voice from './components/Voice'
 // NOTE: Here we have removed the nested routing as the path is the same
 
 function App() {
@@ -81,7 +84,9 @@ if(isLoading){return(<Spinner/>)}
             <Route path='/contact' element={<><Contact/></>} />
           {/*} <Route path='/map' element={<><Map /><LeafMap/></>} /> */}
             <Route path='/video' element={<><PrivateRoute><Video/></PrivateRoute></>}/>
-
+             <Route path='/weather' element={<><Weather/></>}/> 
+            <Route path='/calculator' element={<><Calculator/></>}/>
+            <Route path='/voice' element={<><Voice/></>}/>
             <Route
               path='/new-ticket'
               element={
