@@ -81,6 +81,7 @@ if(isLoading){return(<Spinner/>)}
             <Route path='/contact' element={<><Contact/></>} />
           {/*} <Route path='/map' element={<><Map /><LeafMap/></>} /> */}
             <Route path='/video' element={<><PrivateRoute><Video/></PrivateRoute></>}/>
+
             <Route
               path='/new-ticket'
               element={
@@ -105,6 +106,17 @@ if(isLoading){return(<Spinner/>)}
                 </PrivateRoute>
               }
             />
+
+            <Route
+              path='/profile'
+              element={
+                <PrivateRoute>
+                <ProImg/>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+
             <Route path='/dash' element={<Signin/>} />
           </Routes>
         

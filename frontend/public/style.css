@@ -32,7 +32,7 @@
 }
 .card.reverse{
     color:darkblue;
-    background-color: #656989;
+    background-color:#568978;
   text-decoration: none;
   padding: 15px 26px;
   position: initial;
@@ -41,7 +41,7 @@
   align: center;
 }
 .card.reverse:hover{
-  background: lightgreen;
+  background: grey;
 }
 .card.close{
    border-radius: 30%;

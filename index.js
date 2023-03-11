@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 require('colors')
 require('dotenv').config()
+const uuid = require('uuid')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
 const PORT = process.env.PORT || 5000
@@ -17,7 +18,6 @@ app.use(express.urlencoded({ extended: false }))
 // Routes
 app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/tickets', require('./routes/ticketRoutes'))
-
 
 
 /////Email sending//////
@@ -193,6 +193,12 @@ app.delete('/api/vehicles/:id', (req, res) => {
 });
 
 
+const result = uuid.v4()
+console.log(result);
+
+const shortid = require('shortid');
+ 
+console.log(shortid.generate());
 
 
 
@@ -209,6 +215,7 @@ if (process.env.NODE_ENV ==="production"){
 
     })
 }
+
 
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))

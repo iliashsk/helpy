@@ -47,55 +47,23 @@ const { user } = useSelector((state) => state.auth)
     <br/>
     <br/>
     <br/>
-    <div align='center'>
-    <Card reverse={true} align='center'>
-      <form onSubmit={onSubmit}>
-          <div className='form-group'>
-            <input
-              type='email'
-              className='form-control'
-              id='email'
-              name='email'
-              value={user.email}
-              onChange={onChange}
-              placeholder='Enter your email'
-              required
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-             
-              name='number'
-              value={bookId}
-              onChange={onChange}
-              placeholder='enter your booking Id'
-              required
-            />
-          </div>
-          <div className='form-group' >
-            <button className='btn btn-block' style={{backgroundColor:'lightblue'}}>Submit</button>
-          </div>
-        </form>
-        </Card>
-    </div>
-    <br/>
+
 
     <div align='center'>
     <Card reverse={true} align='center'>
       <BackButton />
       <h1>Tickets</h1>
       <div className='tickets'>
-        <div className='ticket-headings'>
-          <div>Date</div>
-          <div>Product</div>
-          <div>Status</div>
-          <div></div>
-        </div>
+        <table class="table table-striped table-sm">
+          <th>Date </th>
+          <th>Product </th>
+          <th>Status </th>
+          <th>actions </th>
+        
         {tickets.map((ticket) => (
           <TicketItem key={ticket._id} ticket={ticket} />
         ))}
+        </table>
       </div>
       </Card>
       </div>
