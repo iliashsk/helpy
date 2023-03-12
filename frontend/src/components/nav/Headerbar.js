@@ -58,10 +58,16 @@ const Headerbar=()=>{
       <Link to='/video' ></Link>
     </Item>
 
-    <Item key="contact">
+    <SubMenu key="contact" title="Contact" icon={<DropboxOutlined />}>
+      <Item key="contact">
   Contact
       <Link to='/contact' ></Link>
     </Item>
+    <Item key="download">
+  Notices
+      <Link to='/prospectus' ></Link>
+    </Item>
+    </SubMenu>
     
     <Item key="dashboard">
     Dashboard

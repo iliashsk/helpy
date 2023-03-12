@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 require('colors')
 require('dotenv').config()
+const fileUpload = require("express-fileupload");
 const https=require('https')
 const uuid = require('uuid')
 const { errorHandler } = require('./middleware/errorMiddleware')
@@ -15,6 +16,7 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(fileUpload());
 
 // Routes
 app.use('/api/users', require('./routes/userRoutes'))
@@ -231,6 +233,45 @@ const apikey="50a789f1ecfef4993d6f7ad02535a06e";
     })
 
 });
+
+/////////////////////////////upload and download easy one geeks of geeks////////////////////////
+app.post("/upload", function (req, res) {
+  
+  // When a file has been uploaded
+  if (req.files && Object.keys(req.files).length !== 0) {
+    
+    // Uploaded path
+    const uploadedFile = req.files.uploadFile;
+  
+    // Logging uploading file
+    console.log(uploadedFile);
+  
+    // Upload path
+    const uploadPath = __dirname
+        + "/uploads/" + uploadedFile.name;
+  
+    // To save the file using mv() function
+    uploadedFile.mv(uploadPath, function (err) {
+      if (err) {
+        console.log(err);
+        res.send("Failed !!");
+      } else res.send("Successfully Uploaded !!");
+    });
+  } else res.send("No file uploaded !!");
+});
+  
+// To handle the download file request
+app.get("/download", function (req, res) {
+  
+  // The res.download() talking file path to be downloaded
+  res.download(__dirname + "/uploads/softech.pdf", function (err) {
+    if (err) {
+      console.log(err);
+    }
+    
+  });
+});
+  
 
 
 

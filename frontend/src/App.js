@@ -39,6 +39,7 @@ import DeleteVehicle from './helpy/DeleteVehicle'
 import Spinner from './components/Spinner'
 import Contact from './components/Contact'
 import Voice from './components/Voice'
+import FileUpload from './components/FileUpload'
 // NOTE: Here we have removed the nested routing as the path is the same
 
 function App() {
@@ -87,6 +88,7 @@ if(isLoading){return(<Spinner/>)}
              <Route path='/weather' element={<><Weather/></>}/> 
             <Route path='/calculator' element={<><Calculator/></>}/>
             <Route path='/voice' element={<><Voice/></>}/>
+            <Route path='/prospectus' element={<><FileUpload/></>}/>
             <Route
               path='/new-ticket'
               element={
